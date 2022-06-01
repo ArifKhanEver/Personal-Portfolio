@@ -1,0 +1,162 @@
+.footer {
+    background-color: $darkBlue;
+    
+    .container {
+        text-align: center;
+        padding: 62px 0 42px;
+    
+        @include breakpoint-up (tablet) {
+            display: grid;
+            // grid-template-columns: repeat(5, 1fr);
+            grid-template-areas: 
+            "One Two Three Four Five"
+            "one Two Three Four five"
+            ;
+        }
+    
+        .logo {
+            @include breakpoint-up(tablet) {
+                grid-area: One;
+                justify-self: start;
+                width: 80px;
+            }
+            @include breakpoint-down(tablet) {
+                display: block;
+                margin: 0 auto;
+                margin-bottom: 28px;
+                width: 100px;                
+            }
+            
+            img {
+                @include breakpoint-down (tablet) {
+                    margin: auto;
+                }
+            }
+
+        }
+    
+        .social-links {
+                display: flex;
+                gap: 12px;
+                justify-content: center;
+                @include breakpoint-up(tablet) {
+                    grid-area: one;
+                    justify-content: start;
+                    align-self: end;
+                }
+    
+            a {                
+                svg path {
+                transition: .3s;
+                }
+                transition: .3s;                
+                &:hover {                
+                    svg path {
+                        fill: $primary;
+                    }
+                    transform: scale(1.2);
+                } 
+
+                &.github, &.linkedin {
+                    i {
+                        color: #fff;
+                        font-size: 1.3rem;
+                        transition: .3s;
+                    }
+                    &:hover i{
+                        color: $primary;
+                        transform: scale(1.2);
+                    }
+                }
+            }
+    
+            
+        }
+    
+        .links-1 {
+            @include breakpoint-down (tablet) {
+                margin-top: 28px;
+            }
+
+            @include breakpoint-up (tablet) {
+                grid-area: Two;
+                justify-content: start;
+            }
+        }
+    
+        .links-2 {
+            @include breakpoint-down (tablet){
+                margin-bottom: 14px;
+            }
+
+            @include breakpoint-up(tablet) {                
+                grid-area: Three;
+                // justify-content: start;
+                text-align: left;
+            }
+        }
+    
+        .links-1, .links-2 {
+            @include breakpoint-up (tablet) {
+                text-align: left;
+                font-size: 14px;
+            }
+            a {
+                color: $white;
+                display: block;
+                text-decoration: none;
+                width: max-content;
+                transition: .3s;
+                
+                @include breakpoint-down (tablet) {
+                    margin: auto;
+                    padding-bottom: 12px;
+                }
+
+                @include breakpoint-up(tablet) {
+                    padding-bottom: 10px;
+                }
+    
+                &:hover {
+                    color: $primary
+                }
+            }
+        }
+    
+    
+        .btn-div{
+            @include breakpoint-down (tablet) {              
+                margin-bottom: 26px;
+            }
+            @include breakpoint-up (tablet) {                
+                grid-area: Five;
+                justify-self: end;
+            }
+    
+            .btn {
+                position: relative;
+                background: transparent;
+                border: 2px solid $primary;
+                border-radius: 25px;
+                box-shadow: none;
+                width: fit-content;
+                padding: 10px 20px;
+                color: #fff;
+                transition: .3s;
+                &:hover {
+                    background-color: $primary;
+                }    
+            }
+        }
+    
+        .copyright {
+            @include breakpoint-up (tablet) {                
+                grid-area: five;
+                justify-self: end;
+                align-self: end;
+                font-size: 14px;
+            }
+            color: $lightGrayishBlue;
+        }
+    }
+}

@@ -1,0 +1,169 @@
+/* initial set up */
+@font-face {
+    font-family: 'Sophisto';
+    src: url("../Fonts/Sophisto\ OT\ W01\ DGauge.ttf");
+}
+@font-face {
+    font-family: 'Gumela Regular';
+    src: url(../Fonts/Gumela.woff);
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, p, ul, figure, blockquote {
+    margin: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: $fPrimary;
+}
+
+
+ul[role="list"], ol[role="list"] {
+    list-style: none;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+.close {
+    display: none;
+}
+
+.noScroll {
+    overflow: hidden;
+    @include breakpoint-up(desktop) {
+        overflow: scroll;
+    }
+}
+
+a, button{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+img, picture {
+    max-width: 100%;
+    display: block;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    font-family: $fontFamily;
+    font-size: $fontBodyMobile;
+    @include breakpoint-up(tablet) {
+        font-size: $fontBody;
+    }
+    color: $grayishBlue;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-weight: 300;
+    color: $darkBlue;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 38px;
+    @include breakpoint-up(tablet) {
+        font-size: 50px;
+    }
+}
+
+h2 {
+    font-size: 28px;
+    @include breakpoint-up(tablet) {
+        font-size: 40px;
+    }
+}
+
+h3 {
+    font-size: 2.2rem;
+    font-weight: 100;
+    span {
+        display: block;
+    }
+}
+
+span {
+    color: $primary;
+    font-weight: bold;
+}
+
+.container {
+    @include breakpoint-up(tablet) {
+        max-width: 90%;
+        margin: auto;
+    }
+    @include breakpoint-up(desktop) {
+        max-width: 1075px;
+        margin: auto;
+    }
+}
+
+@include breakpoint-down(tablet) {
+    .wrapper {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+.overlay {
+    position: fixed;
+    z-index: 1;
+    top: 6rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient($darkBlue, transparent);
+    @include breakpoint-up(desktop) {
+        display: none;
+    }
+}
+
+button, .button {
+    height: 44px;
+    width: 160px;
+    border: none;
+    text-decoration: none;
+    border-radius: 22px;
+    background: $primary;
+    box-shadow: 4px 7px 13px $shadowPrimary;
+    font-size: 16px;
+    color: $white;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.active {
+    color: white;
+    background-color: black;
+    path {
+        fill: rgba(255, 255, 255, 0.932);
+    }
+    h1, h2, h3, h4, a, p {
+        color: white;
+    }
+}
+
+.mode {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

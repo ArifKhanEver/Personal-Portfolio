@@ -1,0 +1,63 @@
+.about {
+    background-color: $lightGrayishBlue;    
+    .container {
+        max-width: 55%;
+        padding: 90px 0;
+        @include breakpoint-down(tablet) {
+            max-width: 80%;
+            padding: 70px 0 90px;
+            margin: auto;
+            text-align: center;
+        }
+        h2 {
+            @include breakpoint-down(mobile) {
+                font-size: 2.5rem;
+            }
+            margin-bottom: 10px;
+            font-size: 2.8rem;
+            span {
+                color: $primary;
+            }
+        }
+    
+        p {
+            margin-bottom: 30px;
+            font-size: $fontBody;
+        }
+    
+        .button {
+            display: inline-block;
+            &.button1 {
+                padding: 9px 16px 10px;
+                max-width: 110px;
+                margin-right: 10px;
+                background: transparent;
+                box-shadow: none;
+                border: 2px solid $primary;
+                color: black;
+                transition: .2s ease-in-out;
+                &:hover {
+                    background: $primary;
+                    color: white;
+                    opacity: 1;
+                }
+            }
+            &.button2 {
+                padding: 7px 18px 8px;
+                max-width: 400px;
+                img {
+                    display: inline;
+                    padding-top: 3px;
+                }
+            }
+        }
+    }
+    &.active {
+        background-color: rgb(15, 15, 15);        
+        .container {
+            .button1 {
+                color: white;
+            }
+        }
+    }
+}

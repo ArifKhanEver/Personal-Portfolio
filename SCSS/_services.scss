@@ -1,0 +1,157 @@
+.services {
+    background-color: $veryLightGray;
+    &.active {
+        background-color: #000;
+        .container {
+            .uxui, .developer, .design {
+                background-color: rgb(44, 113, 139);
+                box-shadow: none;
+                .button {
+                    opacity: 1;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+    @include breakpoint-down(tablet) {
+        text-align: center;
+    }
+    .container {
+        @include breakpoint-down(desktop) {
+            max-width: 55%;
+            padding: 100px 0;
+        }
+        @include breakpoint-down(tablet) {
+            max-width: 75%;
+            margin: auto;
+        }
+        @include breakpoint-down(mobile) {
+            max-width: 95%;
+            margin: auto;
+        }
+
+        @include breakpoint-up(desktop) {
+            padding: 110px 0;
+            // max-width: 100%;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            row-gap: 2rem;
+        }
+        .wrapper {
+            @include breakpoint-up(desktop) {
+                max-width: 80%;
+                margin-left: 10%;       
+                // display: inline-block;
+                grid-column: 1/4;
+            }
+            h3 {
+
+                @include breakpoint-up(desktop) {
+                    font-size: 2.2rem;
+                    margin-bottom: 1rem;
+                }
+                span {
+                    color: $primary;
+                    display: block;
+                }
+            }
+            
+            p {
+                // max-width: 480px;
+            }
+        
+            .button {
+                @include breakpoint-down(tablet) {
+                    margin: 1.35rem auto 3rem;
+                    padding: 0 55px;
+                }
+                @include breakpoint-down(desktop) {
+                    margin-bottom: 2rem;
+                }
+
+                width: max-content;
+                padding: 0 40px;
+                margin-top: 20px;
+            }
+        }
+        .uxui, .developer, .design {
+            background-color: rgb(255, 255, 255);
+            box-shadow: 5px 5px 20px rgba(177, 160, 160, 0.733);
+            border-radius: 20px;
+            text-align: center;
+            @include breakpoint-down(desktop) {
+                max-width: 380px;
+                display: block;
+                margin: auto;
+                margin-bottom: 3rem;
+                padding-bottom: 5px;
+            }
+            @include breakpoint-down(mobile) {
+                max-width: 90%;
+                margin-bottom: 4rem;
+            }
+            @include breakpoint-up(desktop) {
+                display: inline-block;
+                max-width: 280px;
+                margin-bottom: 20px;
+            }
+            &-logo {
+                padding-top: 25px;
+                padding-bottom: 8px;
+                img {
+                    display: block;
+                    margin: auto;
+                }
+        
+            }
+            h4 {
+                font-size: 20px;
+            }
+            p {
+                padding: 20px 20px 30px;
+                font-size: 15px;
+            }
+            & .button {
+                display: block;
+                margin: auto;
+                font-size: 14px;
+                height: 39px;
+                width: fit-content;
+                padding: 7px 15px;
+                margin-bottom: 35px;
+                background: transparent;
+                border: 2px solid $primary;
+                color: black;
+                box-shadow: none;
+                transition: .2s ease-in-out;
+                &:hover {
+                    background: $primary;
+                    color: white;
+                }
+            }
+        }
+    
+        .uxui {
+            // margin-top: 50px;
+            @include breakpoint-up(desktop) {
+                grid-column: 4/7;
+                justify-self: center;
+            }
+        }
+        .developer {
+            // margin-left: 150px;
+            // margin-top: 30px;
+            @include breakpoint-up(desktop) {
+                grid-column: 2/4;
+                justify-self: center;
+            }
+        }
+        .design {
+            // margin-left: 100px;
+            @include breakpoint-up(desktop) {
+                grid-column: 4/6;
+                justify-self: center;
+            }
+        }
+    }
+}

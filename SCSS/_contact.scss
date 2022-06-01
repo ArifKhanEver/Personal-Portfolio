@@ -1,0 +1,86 @@
+.contacts {
+    .container {
+        padding: 100px 0 80px;
+        max-width: 90%;
+        margin: auto;
+        h3 {
+            text-align: center;
+            font-size: 2.5rem;
+            @include breakpoint-down(tablet) {
+                font-size: 2rem;
+            }
+            font-weight: bold;
+            span {
+                display: inline;
+            }
+        }
+        
+        .title {
+            text-align: center;
+            font-size: 1.5rem;
+            @include breakpoint-down(tablet) {
+                font-size: 1.125rem;
+            }
+            margin-bottom: 60px;
+        }
+        .contact-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5rem;
+            @media screen and (max-width: 600px) {
+                flex-direction: column;
+                row-gap: 3rem;
+            }
+            @include breakpoint-down(desktop) {
+                gap: 2rem;
+            }
+            text-align: center;
+            .contact-item {
+                
+                .icon {
+                    display: grid;
+                    justify-content: center;
+                    @include breakpoint-down(tablet) {
+                        align-items: center;
+                    }
+                    margin-bottom: 2rem;
+                    svg {
+                        width: 70px;
+                        @include breakpoint-down(tablet) {
+                            width: 40px;
+                        }
+                    }
+                }
+                h4 {
+                    font-size: 1.5rem;
+                    @include breakpoint-down(tablet) {
+                        font-size: 1.25rem;
+                    }
+                    text-transform: uppercase;
+                    line-height: 1;
+                    margin-bottom: 10px;
+                }
+                p {
+                    font-size: 18px;
+                    @include breakpoint-down(tablet) {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    
+    }
+    &.active {
+        background-color: rgb(14, 14, 14);
+        .container {
+            .contact-item {
+                svg {
+                    circle {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

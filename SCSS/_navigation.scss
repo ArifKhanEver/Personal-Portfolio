@@ -1,0 +1,199 @@
+header {
+    width: 85%;
+    @include breakpoint-down(mobile) {
+        width: 92%;
+    }
+    margin: auto;
+    padding: 0 40px;
+    @include breakpoint-down(tablet) {
+        padding: 0 10px;
+    }
+    position: sticky;
+    top: 20px;
+    border-radius: 50px;
+    box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.199);
+    background-color: $veryLightGray;
+    z-index: 9;
+    &.active {
+        background-color: black;
+        box-shadow: 0 0 29px 5px rgba(219, 219, 96, 0.384);
+        color: white;
+    }
+.navigation {
+    padding-block: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header-logo {
+        a {
+            color: $primary;
+            font-family: $fPrimary;
+            font-size: 1.4rem;
+            position: relative;
+            img {
+                height: 1.5rem;
+                @include breakpoint-up(tablet) {
+                height: 2.1rem;
+                }
+            }
+        }
+    }
+
+    .header-menu{
+        ul {
+            list-style-type: none;
+            display: flex;
+            padding-left: 0;
+            gap: 30px;
+
+            li {
+                font-size: 16px;
+                position: relative;                
+                a {
+                    color: $grayishBlue;
+                    text-decoration: none;
+                    transition: .3s ease-in-out;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 0%;
+                        height: 4px;
+                        bottom: -10%;
+                        border-radius: 2px;
+                        background: $primary;
+                        opacity: 0;
+                        text-align: center;
+                        transition: .3s ease-in-out;
+                    }
+
+                    
+                    &:hover {
+                        color: $primary;
+                        &::before {
+                            opacity: 1;
+                            width: 100%;
+                            bottom: -60%;
+                        }
+                    }
+
+                    &.contact {
+                        margin-left: 20%;
+                        font-weight: 500;
+                        border: 2px solid $primary;
+                        border-radius: 20px;
+                        padding: 6px 13px;
+                        &:hover {
+                            color: white;
+                            background-color: $primary;
+                            &::before {
+                                opacity: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            &.active {
+                li {
+                    a {
+                        color:rgba(255, 255, 255, 0.925);
+                    }
+                }
+            }
+        }
+
+        @include breakpoint-down(desktop) {
+            display: none;
+        }
+    }
+
+    .mode {
+
+        .sunMoon {
+            path {
+                fill: $primary;                }
+        }
+
+        .toggle {
+            cursor: pointer;
+            .round {
+                display: block;
+                height: 22px;
+                width: 40px;
+                @include breakpoint-down(desktop) {
+                    height: 1.25rem;
+                    width: 2.4rem;
+                }
+                border: 2px solid $primary;
+                border-radius: 20px;
+                &.active {
+                    background-color: hsla(44, 100%, 50%, 0.322);
+                }
+                .circle {
+                    display: block;
+                    position: relative;
+                    background-color: $primary;
+                    height: 14px;
+                    width: 14px;
+                    border-radius: 50%;
+                    left: 2px;
+                    top: 2px;
+                    @include breakpoint-down(desktop) {
+                        height: .9rem;
+                        width: .9rem;
+                        top: 1px;
+                    }
+                    @include breakpoint-down(tablet) {
+                        top: .5px;
+                    }
+                    transition: .3s;
+                    &.active {
+                        left: 20px;
+                        @include breakpoint-down (desktop) {
+                            left: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .hamburger {
+        div > svg {
+            height: 1.7rem;
+        }
+        @include breakpoint-up(desktop) {
+            display: none;
+        }
+    }
+}
+
+
+    .mobile-menu {
+        position: fixed;
+        top: 8rem;
+        width: calc(100% - 4rem);
+        left: 50%;
+        transform: translateX(-50%) ;
+        background-color: #fff;
+        z-index: 10;
+        font-size: 16px;
+        text-align: center;
+        padding: 21px;
+        border-radius: 5px;
+
+        a {
+            display: block;
+            width: min-content;
+            margin: auto;
+            text-decoration: none;
+            color: $darkBlue;
+            padding-top: 9px;
+            padding-bottom: 9px;
+        }
+
+        @include breakpoint-up(desktop) {
+            display: none;
+        }
+    }
+}
