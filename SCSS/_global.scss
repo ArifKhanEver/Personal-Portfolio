@@ -171,9 +171,10 @@ button, .button {
 .warning {
     background-color: red;
     h3 {
-        color: white;
+        color: rgb(207, 201, 201);
         text-align: center;
+        font-weight: bold;
     }
-    margin: 50px 0;
+    margin: 50px 0 0;
     padding: 5px;
 }
