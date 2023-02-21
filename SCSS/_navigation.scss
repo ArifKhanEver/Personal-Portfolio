@@ -83,6 +83,8 @@ header {
                         border: 2px solid $primary;
                         border-radius: 20px;
                         padding: 6px 13px;
+                        letter-spacing: 1px;
+                        // color: $primary;
                         &:hover {
                             color: white;
                             background-color: $primary;

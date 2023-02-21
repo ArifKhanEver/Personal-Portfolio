@@ -3,7 +3,7 @@
 
 .hero__section {
     background-color: $veryLightGray;
-    @include breakpoint-down(tablet) {
+    @include breakpoint-down(desktop) {
         padding-bottom: 50px;
     }
     &.active {
@@ -11,6 +11,7 @@
     }
     .container {
         @include breakpoint-down(tablet) {
+            position: relative;
             max-width: 520px;
             margin: auto;
             padding: 40px 0 10px;
@@ -18,20 +19,20 @@
             justify-content: center;
             align-items: center;
             grid-template-columns: 80px 1fr;
-            grid-template-rows: 1fr 1fr;
+            grid-template-rows: 1fr;
             row-gap: 1rem;
         }
         
         @include breakpoint-up(tablet) {
-            padding: 80px 0 10px;
+            padding: 70px 0 10px;
             display: grid;
             justify-content: center;
             align-items: center;
-            grid-template-columns: 100px repeat(2, 1fr);
+            grid-template-columns: 100px 80%;
         }
         @include breakpoint-up(desktop) {
-            grid-template-columns: 200px repeat(2, 1fr);
-            padding: 100px 0 10px;
+            grid-template-columns: 150px 80%;
+            padding: 65px 0 10px;
 
         }
         .socials {
@@ -43,6 +44,12 @@
                 margin: auto 30px auto auto;                
                 grid-column: 1/2;
                 grid-row: 2/3;
+                margin-bottom: 130%;
+            }
+            @include breakpoint-up(tablet) {
+                position: relative;
+                left: -30%;
+                font-size: 20px;
             }
             a {
                 color: $primary;
@@ -62,7 +69,7 @@
                 
                 }
                 @include breakpoint-up(tablet) {
-                    font-size: 1.6rem;
+                    font-size: 1.4rem;
                     font-family: 'Gumela Regular';
                     font-weight: 900;
                     line-height: 1.8;
@@ -70,22 +77,24 @@
                 }
                 @include breakpoint-up(desktop) {
                     letter-spacing: 5px;
-                    font-size: 2.6rem;
+                    font-size: 2.2rem;
                     
                 }
                 span {
+                    font-family: $fSecondary;
                     @include breakpoint-down(tablet) {
                         display: block; 
                         font-size: 2.5rem;               
                     }
                     @include breakpoint-up(tablet) {
-                        font-size: 2.5rem;
+                        font-size: 3.5rem;
                         display: block;
                         color: $primary;
                         line-height: 1.2;
                     }
                     @include breakpoint-up(desktop) {
-                        font-size: 3.5rem;
+                        font-size: 4.5rem;
+                        line-height: 1;
                     }
                 }
             }
@@ -95,13 +104,16 @@
                 margin: .5rem 0 1.2rem;
                 }
                 display: inline-block;
-                font-family: $fPrimary;
+                font-family: $fSecondary;
+                font-size: 3rem;
                 font-weight: 400;
-                font-size: 1.5rem;
                 letter-spacing: .1px;
                 line-height: 1;
+                @include breakpoint-up(desktop) {
+                    font-size: 4.5rem;
+                }
                 span {
-                    color: hsl(41, 100%, 50%);
+                    color: $primary;
                     font-weight: bold;
                 }
             }
@@ -111,55 +123,84 @@
                     margin-bottom: 2rem;
                 }
                 @include breakpoint-up(tablet) {
-                    font-size: 15px;
-                    margin-top: 20px;
-                    max-width: 400px;
+                    font-size: 16px;
+                    margin-top: 10px;
+                    margin-bottom: 30px;
+                    max-width: 90%;
                 }
-                @include breakpoint-up(tablet) {
+                @include breakpoint-up(desktop) {
                     font-size: 17px;
+                    max-width: 65%;
                 }
             }
             .button {
+                padding: 7px 25px 8px;
+                max-width: 125px;
+                display: inline-block;
+                letter-spacing: 2px;
+                &.buttonR {
+                    background: transparent;
+                    box-shadow: none;
+                    border: 2px solid $primary;
+                    color: black;
+                    transition: .2s ease-in-out;
+                    &:hover {
+                        background: $primary;
+                        color: white;
+                        opacity: 1;
+                    }
+                }
+                @include breakpoint-down(tablet) {
+                    margin-left: auto;
+                    max-width: 125px;
+                    font-size: 14px;
+                    padding: 4px 29px 8px;
+                    height: 35px;
+
+                }
+                &.active {
+                    color: white;
+                }
                 @include breakpoint-down(mobile) {
                     margin-left: 10%;
                 }
             }
         }
-        .image {
-            @include breakpoint-down(tablet) {
-                margin: auto;
-                grid-row: 1/2;
-                grid-column: 1/3;
-            }
+        // .image {
+        //     @include breakpoint-down(tablet) {
+        //         margin: auto;
+        //         grid-row: 1/2;
+        //         grid-column: 1/3;
+        //     }
     
-            svg {
-                @include breakpoint-down(mobile) {
-                    width: 280px;                
-                }
-                @include breakpoint-up(tablet) {
-                    width: 280px;
-                }
-                @include breakpoint-up(desktop) {
-                    width: 360px;                    
-                }
-                path {
-                    fill: $primary;
-                }
-            }
+        //     svg {
+        //         @include breakpoint-down(mobile) {
+        //             width: 280px;                
+        //         }
+        //         @include breakpoint-up(tablet) {
+        //             width: 280px;
+        //         }
+        //         @include breakpoint-up(desktop) {
+        //             width: 360px;                    
+        //         }
+        //         path {
+        //             fill: $primary;
+        //         }
+        //     }
     
-            .img {
-                width: 200px;
-                x: 0px;
-                y: -9px;
-            }
-        }
+        //     .img {
+        //         width: 200px;
+        //         x: 0px;
+        //         y: -9px;
+        //     }
+        // }
     
     }
 }
 
 .scroll__section {
     background-color: $veryLightGray;
-    @include breakpoint-down(tablet){
+    @include breakpoint-down(desktop){
         display: none;
     }
     &.active {

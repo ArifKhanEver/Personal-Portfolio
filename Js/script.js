@@ -6,6 +6,7 @@ const mobile = document.querySelector(".mobile-menu");
 const body = document.querySelector("body");
 const header = document.querySelector('header')
 const hero = document.querySelector('.hero__section')
+const btnResume = document.querySelector ('.buttonR')
 const about = document.querySelector('.about')
 const services = document.querySelector('.services')
 const scrol = document.querySelector('.scroll__section')
@@ -18,7 +19,7 @@ const circle = document.querySelector('.circle')
 const sunMoon = document.querySelectorAll('.sunMoon')
 const ul = document.querySelector('#menu')
 
-const allIDs = [circle, round, header, ul, body, hero, scrol, about, services, skills, projects, contact]
+const allIDs = [circle, round, header, ul, body, hero, btnResume, scrol, about, skills, projects, contacts]
 
 btn.addEventListener('click', function() {
     if(open.classList.contains("close")) {
@@ -47,7 +48,7 @@ toggle.addEventListener('click',()=> {
         // scrol.classList.remove('active')
         // about.classList.remove('active')
         // services.classList.remove('active')
-        sunMoon.forEach(e=> e.classList.remove('active'))
+        sunMoon.forEach(e => e.classList.remove('active'))
         allIDs.forEach(e => e.classList.remove('active'))
     }else {
         // circle.classList.add('active')
@@ -59,7 +60,7 @@ toggle.addEventListener('click',()=> {
         // scrol.classList.add('active')
         // about.classList.add('active')
         // services.classList.add('active')
-        sunMoon.forEach(e=> e.classList.add('active'))
+        sunMoon.forEach(e => e.classList.add('active'))
         allIDs.forEach(e => e.classList.add('active'))
 
     }
@@ -74,3 +75,42 @@ toggle.addEventListener('click',()=> {
     //     })
     // }
 })
+
+
+// Collapse Button
+
+var imageCollapsibles = document.querySelectorAll('.image-collapsible');
+
+for (var i = 0; i < imageCollapsibles.length; i++) {
+    var images = imageCollapsibles[i].querySelectorAll('.image a');
+    var seeMoreLink = imageCollapsibles[i].querySelector('.see-more');
+    var arrow = imageCollapsibles[i].querySelector('.see-more svg');
+    var numVisible = 6; // adjust this number to show more or fewer images by default
+    //hiding extra images
+    for(var j = numVisible; j < images.length; j++) {
+        images[j].classList.add('hidden')
+    }
+    
+    seeMoreLink.addEventListener('click', function(e){
+        e.preventDefault();
+
+    console.log(this)
+        if(this.classList.contains('collapsed')) {
+            this.querySelector('span').innerHTML = 'See more';
+            this.classList.remove('collapsed');
+            arrow.classList.remove('rotate')
+            // show all images
+            for(var j = numVisible; j < images.length; j++) {
+                images[j].classList.add('hidden')
+            }
+        } else {
+            this.querySelector('span').innerHTML = "See less";
+            this.classList.add('collapsed')
+            arrow.classList.add('rotate')
+            // hiding extra images
+            for(var j = numVisible; j < images.length; j++){
+                images[j].classList.remove('hidden')
+            }
+        }
+    });
+}
