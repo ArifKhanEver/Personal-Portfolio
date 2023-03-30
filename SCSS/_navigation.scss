@@ -146,7 +146,7 @@ header {
                         top: 1px;
                     }
                     @include breakpoint-down(tablet) {
-                        top: .5px;
+                        top: .7px;
                     }
                     transition: .3s;
                     &.active {

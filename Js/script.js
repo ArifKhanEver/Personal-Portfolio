@@ -8,9 +8,8 @@ const header = document.querySelector('header')
 const hero = document.querySelector('.hero__section')
 const btnResume = document.querySelector ('.buttonR')
 const about = document.querySelector('.about')
-const services = document.querySelector('.services')
+const testimonial = document.querySelector('.testimonial')
 const scrol = document.querySelector('.scroll__section')
-const skills = document.querySelector('.skills')
 const projects = document.querySelector('.projects')
 const contacts = document.querySelector('.contact')
 const toggle = document.querySelector('.toggle')
@@ -18,8 +17,9 @@ const round = document.querySelector('.round')
 const circle = document.querySelector('.circle')
 const sunMoon = document.querySelectorAll('.sunMoon')
 const ul = document.querySelector('#menu')
+const svgCircle = document.querySelectorAll('circle')
 
-const allIDs = [circle, round, header, ul, body, hero, btnResume, scrol, about, skills, projects, contacts]
+const allIDs = [circle, round, header, ul, body, hero, btnResume, scrol, about, testimonial, projects, contacts]
 
 btn.addEventListener('click', function() {
     if(open.classList.contains("close")) {
@@ -39,41 +39,14 @@ btn.addEventListener('click', function() {
 
 toggle.addEventListener('click',()=> {
     if(circle.classList.contains('active')) {
-        // circle.classList.remove('active')
-        // round.classList.remove('active')
-        // header.classList.remove('active')
-        // ul.classList.remove('active')
-        // body.classList.remove('active')
-        // hero.classList.remove('active')
-        // scrol.classList.remove('active')
-        // about.classList.remove('active')
-        // services.classList.remove('active')
         sunMoon.forEach(e => e.classList.remove('active'))
         allIDs.forEach(e => e.classList.remove('active'))
+        svgCircle.forEach( e=> e.style.fill = "black" )
     }else {
-        // circle.classList.add('active')
-        // round.classList.add('active')
-        // header.classList.add('active')
-        // ul.classList.add('active')
-        // body.classList.add('active')
-        // hero.classList.add('active')
-        // scrol.classList.add('active')
-        // about.classList.add('active')
-        // services.classList.add('active')
         sunMoon.forEach(e => e.classList.add('active'))
         allIDs.forEach(e => e.classList.add('active'))
-
+        svgCircle.forEach( e=> e.style.fill = "white" )
     }
-
-    // if(true) {
-    //     sunMoon.forEach(e=> {
-    //         if (e.classList.contains('inactive')) {
-    //             e.classList.remove('inactive')
-    //         }else{
-    //             e.classList.add('inactive')
-    //         }
-    //     })
-    // }
 })
 
 
@@ -94,7 +67,6 @@ for (var i = 0; i < imageCollapsibles.length; i++) {
     seeMoreLink.addEventListener('click', function(e){
         e.preventDefault();
 
-    console.log(this)
         if(this.classList.contains('collapsed')) {
             this.querySelector('span').innerHTML = 'See more';
             this.classList.remove('collapsed');
@@ -113,4 +85,16 @@ for (var i = 0; i < imageCollapsibles.length; i++) {
             }
         }
     });
+}
+
+
+// location Map
+
+function toggleMap() {
+    var mapDiv = document.querySelector('#map');
+    mapDiv.style.display = (mapDiv.style.display == 'none')? "block" : "none";
+}
+
+function closeMap() {
+    var mapDiv = document.querySelector('#map').style.display= "none";
 }

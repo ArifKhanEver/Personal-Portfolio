@@ -1,0 +1,297 @@
+.testimonial {
+  background-color: $lightGrayishBlue;
+  padding: 100px 0; 
+  @include breakpoint-down(tablet) {
+    padding: 60px 0;   
+  }
+  color: #fff;
+
+  h3 {
+    text-align: center;
+    font-size: 2.7rem;
+    margin-bottom: 4rem;
+    @include breakpoint-down(tablet) {
+        font-size: 2.5rem;
+    }
+    img {
+      height: 28px;
+      width: 28px;
+      display: inline;
+    }
+
+    @include breakpoint-down(desktop) {
+      margin-bottom: 6rem;
+    }
+  }
+
+  .testimonial-container {
+    position: relative;
+    max-width: 1115px;
+    height: 35rem;
+    padding: 2.5rem;
+    background-color: hsla(214, 84%, 19%, 0.829);
+    position: relative;
+    // left: 10%;
+    margin: auto;
+    border-radius: 15px;
+
+    @include breakpoint-down(desktop) {
+      max-width: 92%;
+      height: 56rem;
+    }
+
+    @include breakpoint-down(tablet) {
+      padding: 1.5rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 8.5rem;
+      height: 8.5rem;
+      background-image: url(../images/Testimonial\ images/quote.png);
+      background-position: center center;
+      background-size: contain;
+      left: 4rem;
+      top: -5rem;
+      @include breakpoint-down(tablet) {
+        height: 6rem;
+        width: 6rem;
+        top: -3.3rem;
+      }
+    }
+
+    .testimonial-wrapper {
+      height: 100%;
+      display: flex;
+      gap: 2.5rem;
+      position: relative;
+
+      @include breakpoint-down(desktop) {
+        flex-direction: column;
+      }
+
+      .contents-section {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+
+        @include breakpoint-down(desktop) {
+          padding: 50px 0 10px;
+        }
+        @include breakpoint-down(tablet) {
+          padding: 20px 0 10px;
+        }
+
+        .title {
+          margin-bottom: 1.5rem;
+          font-size: 2rem;
+          font-weight: bold;
+          color: #ffffff;
+          font-family: $fontFamily;
+          @include breakpoint-down(tablet) {
+            font-size: 1.9rem;
+          }
+
+        }
+        .description {
+          color: #bbd6ff;
+        }
+
+        .contact {
+          max-width: fit-content;
+          margin-top: 1.5rem;
+          color: #bbd6ff;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          cursor: pointer;
+          transition: all .1s;
+          text-decoration: underline;
+
+          &:hover {
+            transform: scale( 1.01);
+
+            p {
+              color: #fff;
+            }
+          }
+
+          p {
+            
+          }
+
+          span {
+            width: 18px;
+            height: 18px;
+            background:rgb(255, 255, 255);
+            border-radius: 50%;
+            position: relative;
+
+            &::before {
+              content: "";
+              height: 7px;
+              width: 7px;
+              border: 2px solid #2c6fff;
+              border-left-color: #fff;
+              border-bottom-color: #fff;
+              position: absolute;
+              left: 15%;
+              top: 31%;
+              transform: rotate(45deg);
+              z-index: 1;
+            }
+
+            &::after {
+              content: "";
+              height: 7px;
+              width: 7px;
+              border: 2px solid #2c6fff;
+              border-left-color: #fff;
+              border-bottom-color: #fff;
+              position: absolute;
+              left: 37%;
+              top: 31%;
+              transform: rotate(45deg);
+            }
+          }
+        }
+
+      }
+
+      .slides-section {
+        flex: 4;
+
+        @include breakpoint-down(desktop) {
+          display: flex;
+          justify-content: center;
+        }
+        
+        .slides-container {
+          position: absolute;
+          height: 100%;
+          max-width: 41.563rem;
+          overflow: hidden;
+          @include breakpoint-down(tablet) {
+            max-width: 17rem;    
+          }
+
+          .slides {
+            display: flex;
+            position: relative;
+            right: 0;
+            left: 0;
+            color: #000000;
+            transition: transform .3s ease-in-out;
+            
+
+            .slide {
+              background: #ffffff;
+              border-radius: 5px;
+              min-width: 19.78rem;
+              overflow: hidden;
+              margin-right: 2rem;
+              @include breakpoint-down(tablet) {
+                min-width: 17rem;
+              }
+              
+  
+              .image {
+                position: relative;
+
+                &::before {
+                  content: '';
+                  position: absolute;
+                  height: 45px;
+                  width: 45px;
+                  background-image: url(../images/Testimonial\ images/quote.png);
+                  left: 1rem;
+                  bottom: -10%;
+                  background-position: center center;
+                  background-size: contain;
+                }
+
+                img {
+                  object-fit: cover;
+                  width: 100%;
+                  height: 12rem;
+
+                }
+  
+              }
+  
+              .text {
+                padding: 1.5rem;
+                text-align: justify;
+                font-size: 14px;
+                line-height: 1.25;
+                .narration {
+                  font-weight: 700;
+                  padding-bottom: 1rem;
+                  color: #000;
+                }
+  
+                .author {
+                  font-size: 18px;
+                  font-weight: 900;
+                  color: #000;
+                }
+  
+                .designation {
+                  font-size: 14px;
+                  font-style: italic;
+                  color: #000;
+                }
+              }
+            }
+          }
+
+          .buttons {
+            display: flex;
+            position: relative;
+            margin-top: 20px;
+            user-select: none;
+            cursor: pointer;
+
+            @include breakpoint-down(desktop) {
+              justify-content: center;
+              margin-top: 28px;
+            }
+
+            .button-prev, .button-next {
+              width: 28px;
+              height: 38px;
+              background-color: hsl(214, 97%, 58%);
+              color: #ffffff;
+              font-size: 22px;
+              display: flex;
+              justify-content: center;
+              border: 1px solid hsl(214, 84%, 51%);
+
+              @include breakpoint-down(desktop) {
+                width: 38px;
+                height: 40px;
+              }
+
+              &:hover {
+              background-color: hsl(214, 100%, 65%);
+              }
+            }
+
+            .button-prev {
+              background-color: hsl(214, 100%, 65%);
+            }
+
+          }
+        }
+        
+      }
+    }
+  }
+
+  &.active {
+    background: #000;
+  }
+}

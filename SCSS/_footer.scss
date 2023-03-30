@@ -7,6 +7,7 @@
     
         @include breakpoint-up (tablet) {
             display: grid;
+            row-gap: .75rem;
             // grid-template-columns: repeat(5, 1fr);
             grid-template-areas: 
             "One Two Three Four Five"
@@ -80,7 +81,9 @@
 
             @include breakpoint-up (tablet) {
                 grid-area: Two;
-                justify-content: start;
+                display: grid;
+                justify-content: center;
+                align-items: center;
             }
         }
     
@@ -93,20 +96,23 @@
                 grid-area: Three;
                 // justify-content: start;
                 text-align: left;
+                display: grid;
+                justify-content: center;
+                align-items: center;
             }
         }
     
         .links-1, .links-2 {
             @include breakpoint-up (tablet) {
                 text-align: left;
-                font-size: 14px;
+                font-size: 16px;
             }
             a {
                 color: $white;
                 display: block;
                 text-decoration: none;
                 width: max-content;
-                transition: .3s;
+                transition: .2s;
                 
                 @include breakpoint-down (tablet) {
                     margin: auto;
@@ -118,20 +124,12 @@
                 }
     
                 &:hover {
-                    color: $primary
+                    color: $primary;
+                    transform: scale(1.05);
                 }
             }
         }
     
-    
-        .btn-div{
-            @include breakpoint-down (tablet) {              
-                margin-bottom: 26px;
-            }
-            @include breakpoint-up (tablet) {                
-                grid-area: Five;
-                justify-self: end;
-            }
     
             .btn {
                 position: relative;
@@ -146,6 +144,20 @@
                 &:hover {
                     background-color: $primary;
                 }    
+            }
+
+                
+        .btn-div{
+            @include breakpoint-down (tablet) {              
+                margin-bottom: 26px;
+            }
+            @include breakpoint-up (tablet) {                
+                grid-area: Five;
+                justify-self: end;
+                letter-spacing: 2px;
+            }
+            a {
+                padding: 6px 28px;
             }
         }
     
