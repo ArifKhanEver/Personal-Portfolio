@@ -4,22 +4,7 @@ const close = document.querySelector(".close");
 const ovrly = document.querySelector(".lorem");
 const mobile = document.querySelector(".mobile-menu");
 const body = document.querySelector("body");
-const header = document.querySelector('header')
-const hero = document.querySelector('.hero__section')
-const btnResume = document.querySelector ('.buttonR')
-const about = document.querySelector('.about')
-const testimonial = document.querySelector('.testimonial')
-const scrol = document.querySelector('.scroll__section')
-const projects = document.querySelector('.projects')
-const contacts = document.querySelector('.contact')
-const toggle = document.querySelector('.toggle')
-const round = document.querySelector('.round')
-const circle = document.querySelector('.circle')
-const sunMoon = document.querySelectorAll('.sunMoon')
-const ul = document.querySelector('#menu')
-const svgCircle = document.querySelectorAll('circle')
 
-const allIDs = [circle, round, header, ul, body, hero, btnResume, scrol, about, testimonial, projects, contacts]
 
 btn.addEventListener('click', function() {
     if(open.classList.contains("close")) {
@@ -36,18 +21,6 @@ btn.addEventListener('click', function() {
         body.classList.add("noScroll");
     }
 });
-
-toggle.addEventListener('click',()=> {
-    if(circle.classList.contains('active')) {
-        sunMoon.forEach(e => e.classList.remove('active'))
-        allIDs.forEach(e => e.classList.remove('active'))
-        svgCircle.forEach( e=> e.style.fill = "black" )
-    }else {
-        sunMoon.forEach(e => e.classList.add('active'))
-        allIDs.forEach(e => e.classList.add('active'))
-        svgCircle.forEach( e=> e.style.fill = "white" )
-    }
-})
 
 
 // Collapse Button

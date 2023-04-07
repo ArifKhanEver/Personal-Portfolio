@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* initial set up */
 @import url("https://fonts.googleapis.com/css2?family=Prompt:wght@200;400;600;700;900&display=swap");
 @font-face {
@@ -127,7 +128,7 @@ span {
 .overlay {
   position: fixed;
   z-index: 1;
-  top: 6rem;
+  top: 4rem;
   bottom: 0;
   left: 0;
   right: 0;
@@ -140,7 +141,7 @@ span {
 }
 
 button, .button {
-  height: 44px;
+  height: 40px;
   width: 160px;
   border: none;
   text-decoration: none;
@@ -159,23 +160,6 @@ button:hover, .button:hover {
   opacity: 0.7;
 }
 
-.active {
-  color: white;
-  background-color: black;
-}
-.active path {
-  fill: rgba(255, 255, 255, 0.932);
-}
-.active h1, .active h2, .active h3, .active h4, .active a, .active p {
-  color: white;
-}
-
-.mode {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .warning {
   background-color: red;
   margin: 50px 0 0;
@@ -188,30 +172,18 @@ button:hover, .button:hover {
 }
 
 header {
-  width: 85%;
-  margin: auto;
-  padding: 0 40px;
   position: sticky;
-  top: 20px;
-  border-radius: 50px;
-  box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.199);
-  background-color: hsl(0, 0%, 98%);
+  top: 0px;
+  background-color: white;
+  height: 70px;
+  margin: auto;
+  padding-top: 10px;
   z-index: 9;
-}
-@media screen and (max-width: 29.9375em) {
-  header {
-    width: 92%;
-  }
 }
 @media screen and (max-width: 49.9375em) {
   header {
-    padding: 0 10px;
+    width: 95%;
   }
-}
-header.active {
-  background-color: black;
-  box-shadow: 0 0 29px 5px rgba(219, 219, 96, 0.384);
-  color: white;
 }
 header .navigation {
   padding-block: 10px;
@@ -248,100 +220,34 @@ header .navigation .header-menu ul li a {
   text-decoration: none;
   transition: 0.3s ease-in-out;
 }
-header .navigation .header-menu ul li a::before {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 4px;
-  bottom: -10%;
-  border-radius: 2px;
-  background: hsl(44, 100%, 50%);
-  opacity: 0;
-  text-align: center;
-  transition: 0.3s ease-in-out;
-}
 header .navigation .header-menu ul li a:hover {
   color: hsl(44, 100%, 50%);
-}
-header .navigation .header-menu ul li a:hover::before {
-  opacity: 1;
-  width: 100%;
-  bottom: -60%;
-}
-header .navigation .header-menu ul li a.contact {
-  margin-left: 20%;
-  font-weight: 500;
-  border: 2px solid hsl(44, 100%, 50%);
-  border-radius: 20px;
-  padding: 6px 13px;
-  letter-spacing: 1px;
-}
-header .navigation .header-menu ul li a.contact:hover {
-  color: white;
-  background-color: hsl(44, 100%, 50%);
-}
-header .navigation .header-menu ul li a.contact:hover::before {
-  opacity: 0;
-}
-header .navigation .header-menu ul.active li a {
-  color: rgba(255, 255, 255, 0.925);
 }
 @media screen and (max-width: 63.9375em) {
   header .navigation .header-menu {
     display: none;
   }
 }
-header .navigation .mode .sunMoon path {
-  fill: hsl(44, 100%, 50%);
-}
-header .navigation .mode .toggle {
-  cursor: pointer;
-}
-header .navigation .mode .toggle .round {
-  display: block;
-  height: 22px;
-  width: 40px;
+header .navigation .contact a {
+  font-weight: 500;
   border: 2px solid hsl(44, 100%, 50%);
-  border-radius: 20px;
-}
-@media screen and (max-width: 63.9375em) {
-  header .navigation .mode .toggle .round {
-    height: 1.25rem;
-    width: 2.4rem;
-  }
-}
-header .navigation .mode .toggle .round.active {
-  background-color: hsla(44, 100%, 50%, 0.322);
-}
-header .navigation .mode .toggle .round .circle {
-  display: block;
-  position: relative;
+  border-radius: 25px;
+  padding: 10px 25px;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
   background-color: hsl(44, 100%, 50%);
-  height: 14px;
-  width: 14px;
-  border-radius: 50%;
-  left: 2px;
-  top: 2px;
-  transition: 0.3s;
+  color: white;
+}
+header .navigation .contact a:hover {
+  color: hsl(0, 0%, 0%);
+  background-color: transparent;
+}
+header .navigation .contact a:hover::before {
+  opacity: 0;
 }
 @media screen and (max-width: 63.9375em) {
-  header .navigation .mode .toggle .round .circle {
-    height: 0.9rem;
-    width: 0.9rem;
-    top: 1px;
-  }
-}
-@media screen and (max-width: 49.9375em) {
-  header .navigation .mode .toggle .round .circle {
-    top: 0.7px;
-  }
-}
-header .navigation .mode .toggle .round .circle.active {
-  left: 20px;
-}
-@media screen and (max-width: 63.9375em) {
-  header .navigation .mode .toggle .round .circle.active {
-    left: 18px;
+  header .navigation .contact {
+    display: none;
   }
 }
 header .navigation .hamburger div > svg {
@@ -382,22 +288,19 @@ header .mobile-menu a {
 }
 
 .hero__section {
-  background-color: hsl(0, 0%, 98%);
+  background: hsl(0, 0%, 98%);
 }
 @media screen and (max-width: 63.9375em) {
   .hero__section {
     padding-bottom: 50px;
   }
 }
-.hero__section.active {
-  background-color: black;
-}
 @media screen and (max-width: 49.9375em) {
   .hero__section .container {
     position: relative;
     max-width: 520px;
     margin: auto;
-    padding: 40px 0 10px;
+    padding: 20px 0 10px;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -456,7 +359,7 @@ header .mobile-menu a {
 }
 @media screen and (max-width: 49.9375em) {
   .hero__section .container .descriptions h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 @media screen and (min-width: 50em) {
@@ -480,7 +383,7 @@ header .mobile-menu a {
 @media screen and (max-width: 49.9375em) {
   .hero__section .container .descriptions h1 span {
     display: block;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 @media screen and (min-width: 50em) {
@@ -507,7 +410,7 @@ header .mobile-menu a {
 }
 @media screen and (max-width: 49.9375em) {
   .hero__section .container .descriptions .title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin: 0.5rem 0 1.2rem;
   }
 }
@@ -541,7 +444,7 @@ header .mobile-menu a {
   }
 }
 .hero__section .container .descriptions .button {
-  padding: 7px 25px 8px;
+  padding: 7px 25px 7px;
   max-width: 125px;
   display: inline-block;
   letter-spacing: 2px;
@@ -559,6 +462,12 @@ header .mobile-menu a {
   color: white;
   opacity: 1;
 }
+@media screen and (max-width: 63.9375em) {
+  .hero__section .container .descriptions .button {
+    padding: 6px 25px 8px;
+    height: 40px;
+  }
+}
 @media screen and (max-width: 49.9375em) {
   .hero__section .container .descriptions .button {
     margin-left: auto;
@@ -571,9 +480,6 @@ header .mobile-menu a {
     transform: translate(-50%);
   }
 }
-.hero__section .container .descriptions .button.active {
-  color: white;
-}
 
 .scroll__section {
   background-color: hsl(0, 0%, 98%);
@@ -583,9 +489,6 @@ header .mobile-menu a {
   .scroll__section {
     display: none;
   }
-}
-.scroll__section.active {
-  background-color: black;
 }
 .scroll__section .scroll {
   display: block;
@@ -680,39 +583,135 @@ header .mobile-menu a {
     grid-template-rows: 1fr;
     justify-content: center;
     align-items: start;
-    gap: 3rem;
+    gap: 4rem;
   }
 }
 .about .container .grid .image {
   position: relative;
+  max-width: 400px;
   left: -10px;
   grid-area: img;
   grid-column: 2/3;
   grid-row: 1/1;
+  background-color: rgb(248, 185, 66);
+  border-radius: 50%;
 }
 @media screen and (max-width: 63.9375em) {
   .about .container .grid .image {
     top: 10%;
   }
 }
+@media screen and (max-width: 49.9375em) {
+  .about .container .grid .image {
+    max-width: 270px;
+  }
+}
 .about .container .grid .image img {
-  border-radius: 5px;
+  border-radius: 50%;
   position: relative;
+  transform: scale(0.65);
+  display: block;
+  z-index: 1;
+  border: 8px solid white;
+  box-shadow: 2px 2px 15px gray;
+  transition: 0.25s ease-in-out;
+}
+@media screen and (max-width: 63.9375em) {
+  .about .container .grid .image img {
+    transform: scale(0.7);
+  }
 }
 .about .container .grid .image img:hover {
-  transform: scale(1.02);
-  transition: 0.3s;
+  transform: scale(1);
 }
 .about .container .grid .image::before {
   content: "";
   display: block;
   width: 100%;
   height: 100%;
-  border: 7px solid hsl(44, 100%, 50%);
-  border-radius: 5px;
+  border: 2px dashed hsl(44, 100%, 50%);
+  border-radius: 50%;
+  transform: scale(1.05);
   position: absolute;
-  left: 7%;
-  top: 7%;
+  left: 0%;
+  top: 0%;
+  z-index: 1;
+}
+.about .container .grid .image::after {
+  content: "";
+  display: block;
+  width: 400px;
+  height: 125px;
+  background-color: hsl(220, 16%, 96%);
+  position: absolute;
+  left: 3rem;
+  bottom: 0;
+  transform: rotate(-22deg);
+}
+@media screen and (max-width: 49.9375em) {
+  .about .container .grid .image::after {
+    left: 2rem;
+    bottom: 18px;
+    transform: rotate(-29deg);
+    width: 300px;
+    height: 90px;
+  }
+}
+.about .container .grid .image .title {
+  position: absolute;
+  background-color: hsl(220, 16%, 96%);
+  left: 2rem;
+  bottom: -2.875rem;
+  width: 370px;
+  padding: 10px 0;
+  margin: auto;
+  height: 100px;
+  text-align: center;
+  z-index: 1;
+}
+.about .container .grid .image .title::before {
+  content: "💻";
+  position: absolute;
+  left: 75%;
+  top: -10%;
+  font-size: 1.3rem;
+}
+.about .container .grid .image .title::after {
+  content: "";
+  height: 20px;
+  width: 80px;
+  border-top: 2px dashed hsl(44, 100%, 50%);
+  display: block;
+  position: absolute;
+  transform: rotate(-22deg);
+  top: 15px;
+  left: -62px;
+}
+.about .container .grid .image .title .name {
+  font-size: 1.75rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+.about .container .grid .image .title .name span {
+  display: block;
+  color: #000;
+}
+@media screen and (max-width: 49.9375em) {
+  .about .container .grid .image .title {
+    width: 250px;
+    left: 1.5rem;
+    bottom: -4.125rem;
+  }
+  .about .container .grid .image .title .name {
+    font-size: 1.5rem;
+  }
+  .about .container .grid .image .title::after {
+    transform: rotate(-29deg);
+    left: -40px;
+    top: 12px;
+    width: 60px;
+  }
 }
 .about .container .grid .description {
   margin-bottom: 30px;
@@ -750,12 +749,6 @@ header .mobile-menu a {
   color: white;
   opacity: 1;
 }
-.about.active {
-  background-color: rgb(15, 15, 15);
-}
-.about.active .container .button1 {
-  color: white;
-}
 
 .projects {
   padding: 110px 0 50px;
@@ -783,7 +776,7 @@ header .mobile-menu a {
 .projects .container .works .image {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
+  row-gap: 2rem;
   justify-items: center;
 }
 @media screen and (max-width: 63.9375em) {
@@ -791,7 +784,7 @@ header .mobile-menu a {
     grid-template-columns: repeat(2, 1fr);
     -moz-column-gap: 0;
          column-gap: 0;
-    row-gap: 3rem;
+    gap: 3rem;
     max-width: 90%;
     margin: auto;
   }
@@ -809,7 +802,7 @@ header .mobile-menu a {
   overflow: hidden;
 }
 .projects .container .works .image .work img {
-  max-width: 300px;
+  max-width: 315px;
 }
 .projects .container .works .image .work::before {
   content: "";
@@ -823,7 +816,7 @@ header .mobile-menu a {
   z-index: 1;
 }
 .projects .container .works .image .work::after {
-  content: "Demo";
+  content: "Visit ...";
   display: block;
   position: absolute;
   z-index: 2;
@@ -879,18 +872,6 @@ header .mobile-menu a {
 }
 .projects .container .image-collapsible .image a.hidden {
   display: none;
-}
-.projects.active {
-  background-color: #000;
-}
-.projects.active .collapse button {
-  color: #fff;
-}
-.projects.active .collapse button svg {
-  height: 50px;
-}
-.projects.active .collapse button svg path {
-  fill: white;
 }
 
 .testimonial {
@@ -1173,9 +1154,6 @@ header .mobile-menu a {
 .testimonial .testimonial-container .testimonial-wrapper .slides-section .slides-container .buttons .button-prev {
   background-color: hsl(214, 100%, 65%);
 }
-.testimonial.active {
-  background: #000;
-}
 
 .contacts .container {
   padding: 100px 0 80px;
@@ -1304,12 +1282,6 @@ header .mobile-menu a {
   height: 25px;
   cursor: pointer;
   z-index: 3;
-}
-.contacts.active {
-  background-color: rgb(14, 14, 14);
-}
-.contacts.active .container .contact-item svg {
-  fill: white;
 }
 
 .footer {
@@ -1463,7 +1435,7 @@ header .mobile-menu a {
   }
 }
 .footer .container .btn-div a {
-  padding: 6px 28px;
+  padding: 7px 28px;
 }
 .footer .container .copyright {
   color: hsl(220, 16%, 96%);

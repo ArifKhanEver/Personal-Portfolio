@@ -1,24 +1,16 @@
 header {
-    width: 85%;
-    @include breakpoint-down(mobile) {
-        width: 92%;
-    }
-    margin: auto;
-    padding: 0 40px;
-    @include breakpoint-down(tablet) {
-        padding: 0 10px;
-    }
     position: sticky;
-    top: 20px;
-    border-radius: 50px;
-    box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.199);
-    background-color: $veryLightGray;
+    top: 0px;
+    background-color: white;
+    height: 70px;
+    margin: auto;
+    padding-top: 10px;
     z-index: 9;
-    &.active {
-        background-color: black;
-        box-shadow: 0 0 29px 5px rgba(219, 219, 96, 0.384);
-        color: white;
+    @include breakpoint-down(tablet) {
+        width: 95%;
     }
+    
+    
 .navigation {
     padding-block: 10px;
     display: flex;
@@ -54,109 +46,59 @@ header {
                     color: $grayishBlue;
                     text-decoration: none;
                     transition: .3s ease-in-out;
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        width: 0%;
-                        height: 4px;
-                        bottom: -10%;
-                        border-radius: 2px;
-                        background: $primary;
-                        opacity: 0;
-                        text-align: center;
-                        transition: .3s ease-in-out;
-                    }
+                    // &::before {
+                    //     content: "";
+                    //     position: absolute;
+                    //     width: 0%;
+                    //     height: 4px;
+                    //     bottom: -10%;
+                    //     border-radius: 2px;
+                    //     background: $primary;
+                    //     opacity: 0;
+                    //     text-align: center;
+                    //     transition: .3s ease-in-out;
+                    // }
 
                     
                     &:hover {
                         color: $primary;
-                        &::before {
-                            opacity: 1;
-                            width: 100%;
-                            bottom: -60%;
-                        }
-                    }
-
-                    &.contact {
-                        margin-left: 20%;
-                        font-weight: 500;
-                        border: 2px solid $primary;
-                        border-radius: 20px;
-                        padding: 6px 13px;
-                        letter-spacing: 1px;
-                        // color: $primary;
-                        &:hover {
-                            color: white;
-                            background-color: $primary;
-                            &::before {
-                                opacity: 0;
-                            }
-                        }
+                        // &::before {
+                        //     opacity: 1;
+                        //     width: 100%;
+                        //     bottom: -60%;
+                        // }
                     }
                 }
-            }
-            &.active {
-                li {
-                    a {
-                        color:rgba(255, 255, 255, 0.925);
-                    }
-                }
-            }
+            }            
         }
 
         @include breakpoint-down(desktop) {
             display: none;
         }
     }
-
-    .mode {
-
-        .sunMoon {
-            path {
-                fill: $primary;                }
-        }
-
-        .toggle {
-            cursor: pointer;
-            .round {
-                display: block;
-                height: 22px;
-                width: 40px;
-                @include breakpoint-down(desktop) {
-                    height: 1.25rem;
-                    width: 2.4rem;
-                }
-                border: 2px solid $primary;
-                border-radius: 20px;
-                &.active {
-                    background-color: hsla(44, 100%, 50%, 0.322);
-                }
-                .circle {
-                    display: block;
-                    position: relative;
-                    background-color: $primary;
-                    height: 14px;
-                    width: 14px;
-                    border-radius: 50%;
-                    left: 2px;
-                    top: 2px;
-                    @include breakpoint-down(desktop) {
-                        height: .9rem;
-                        width: .9rem;
-                        top: 1px;
-                    }
-                    @include breakpoint-down(tablet) {
-                        top: .7px;
-                    }
-                    transition: .3s;
-                    &.active {
-                        left: 20px;
-                        @include breakpoint-down (desktop) {
-                            left: 18px;
-                        }
-                    }
+    
+    .contact {
+        a {
+            font-weight: 500;
+            border: 2px solid $primary;
+            border-radius: 25px;
+            padding: 10px 25px;
+            // letter-spacing: 1px;
+            text-decoration: none;
+            transition: .3s ease-in-out;
+            background-color: $primary;
+            color: white;
+            &:hover {
+                color: $grayishBlue;
+                background-color: transparent;
+                &::before {
+                    opacity: 0;
                 }
             }
+        }
+
+        @include breakpoint-down(desktop) {
+            display: none;
         }
     }
 

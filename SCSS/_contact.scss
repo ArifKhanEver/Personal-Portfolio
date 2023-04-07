@@ -120,16 +120,6 @@
         }
     
     }
-    &.active {
-        background-color: rgb(14, 14, 14);
-        .container {
-            .contact-item {
-                svg {   
-                    fill: white;
-                }
-            }
-        }        
-    }
 }
 
 

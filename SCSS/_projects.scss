@@ -23,12 +23,12 @@
             .image { 
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
-                gap: 2rem;
+                row-gap: 2rem;
                 justify-items: center;
                 @include breakpoint-down(desktop) {
                     grid-template-columns: repeat(2, 1fr);
                     column-gap: 0;
-                    row-gap: 3rem;
+                    gap: 3rem;
                     max-width: 90%;
                     margin: auto;
                 }
@@ -44,7 +44,7 @@
                     border-radius: 15px;
                     overflow: hidden;
                     img {
-                        max-width: 300px;
+                        max-width: 315px;
                     }
         
                     &::before {
@@ -59,7 +59,7 @@
                         z-index: 1;
                     }
                     &::after {
-                        content: 'Demo';
+                        content: 'Visit ...';
                         display: block;
                         position: absolute;
                         z-index: 2;
@@ -121,20 +121,6 @@
 
         .image-collapsible .image a.hidden {
             display: none;
-        }
-    }
-    &.active {
-        background-color: #000;
-        .collapse {
-            button {
-                color: #fff;
-                svg {
-                    height: 50px;
-                    path {
-                        fill: white;
-                    }
-                }
-            }
         }
     }
 }
